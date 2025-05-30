@@ -128,21 +128,21 @@
       <div class="tab-content">
         <div class="container border border-top-0">
           <div class="tab-pane fade show active p-4">
-            <div class="row justify-content-center align-content-center ">
-              <div class="col-4 d-flex flex-nowrap justify-content-end ">
+            <div class="d-flex flex-nowrap justify-content-center align-content-center ">
+              <div class=" d-flex flex-nowrap justify-content-end ">
                 <div class="row justify-content-center align-content-center text-center">
                   <h1 class="col-12">7</h1>
                   <p style="color: rgb(255, 204, 102);" class="col-12">SENT</p>
                 </div>
               </div>
-              <div class="col-4 border-start border-end d-flex justify-content-center px-0">
+              <div class=" border-start border-end d-flex justify-content-center px-0">
                 <div class="row justify-content-center align-content-center text-center ">
                   <h1 class="col-12">1</h1>
                   <p style="color: rgb(255, 204, 102);" class="col-12">RECEIVED</p>
                 </div>
 
               </div>
-              <div class="col-4 d-flex flex-nowrapjustify-content-start ">
+              <div class=" d-flex flex-nowrapjustify-content-start ">
                 <div class="row justify-content-center align-content-center text-center">
                   <h1 class="col-12">0</h1>
                   <p style="color: rgb(255, 204, 102);" class="col-12">RARE</p>
@@ -217,17 +217,17 @@
         </div>
       </div>
     </section>
-    <section class=" py-5">
+    <section class=" py-5 container-md container-sm  justify-content-sm-center justify-content-md-center">
       <div class="">
 
         <div id="sentSection">
-          <div id="cardSection" class="row">
+          <div id="cardSection" class="row ">
 
           </div>
         </div>
 
         <div id="receivedSection" class="row " style="display: none;">
-          <div id="cardSectionReceived" class="row">
+          <div id="cardSectionReceived" class="row ">
 
           </div>
         </div>
@@ -300,7 +300,7 @@
       function createCard(cardData) {
         return `
         
-               <div class="card col-lg-4 col-md-6 col-12 bg-transparent p-3">
+               <div class="card col-lg-4 col-md-6 col-12  bg-transparent p-3">
       <img src="${cardData.giftimage}" alt="Gift" class="position-absolute top-0 end-0 " ">
   <div class="card-image overflow-hidden">
     <img src="${cardData.image}" alt="${cardData.name}" class="img-fluid w-100 mx-auto d-block">
@@ -379,7 +379,12 @@
           SUPPORT</a><a id="ot-sdk-btn" class="ot-sdk-show-settings">COOKIE SETTINGS</a>
       </div>
       <img src="../assets/iamges/logos.png" alt="Wargaming-logo" class="img-fluid my-3">
-      <p class="description text-white">
+      <p style="
+        font-size: 14px;
+        line-height: 19px;
+        color: #fff;
+        opacity: .7;
+      " class="description text-white">
         © 2025 Wargaming.net. All rights reserved. "Wargaming.net" and "World
         of Tanks," along with their respective logos, are trademarks or
         registered trademarks of Wargaming in the USA and other countries. The
