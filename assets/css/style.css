@@ -127,11 +127,31 @@ p {
   background: #496780;
   max-width: 380px;
   max-height: 205px;
+  position: relative;
 }
-
-.header-dropdown.position-absolute {
+.position-gift-card {
   bottom: -15px;
   right: 18px;
+}
+.uldropdownmenu{
+  border: 8px solid #322f2b;
+  padding: 0;
+  outline: 3px solid #f7da94 ;
+}
+/* .uldropdownmenu:active{
+  display: none;
+} */
+.dropdown-a-style{
+  color: #081a32;
+  background-color: #f7da94;
+  /* border: 8px solid #322f2b; */
+}
+.dropdown-a-style:hover{
+  background: #f7da94;
+}
+.dropdown-a-style:focus{
+  background-color: #f7da94;
+  color: black;
 }
 .header-dropdown.position-absolute {
   top: 0 !important;
