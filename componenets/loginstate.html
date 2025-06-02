@@ -190,12 +190,12 @@
             <p class="mb-0">SELECT TEMPLATE</p>
             <img src="../assets/iamges/arrow-down.png" alt="Arrow" width="26">
           </div>
-          <ul class="dropdown-menu p-2 shadow">
+          <ul class="dropdown-menu p-2 rounded-5">
             <li>
-              <input type="search" class="form-control mb-2" placeholder="Search template">
+              <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search template">
             </li>
-            <li><a class="dropdown-item" href="#">ALL</a></li>
-            <li><a class="dropdown-item" href="#">THOR</a></li>
+            <li><a class="selectnav         dropdown-item" href="#">ALL</a></li>
+            <li><a class="selectnav  dropdown-item" href="#">THOR</a></li>
           </ul>
         </div>
         <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
@@ -203,14 +203,14 @@
             <p class="mb-0">SELECT PLAYER</p>
             <img src="../assets/iamges/arrow-down.png" alt="Arrow" width="26">
           </div>
-          <ul class="dropdown-menu p-2 shadow">
+          <ul class="dropdown-menu p-2 shadow ">
             <li>
-              <input type="search" class="form-control mb-2" placeholder="Search player">
+              <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search player">
             </li>
-            <li class="d-flex align-items-center gap-2 px-2">
+            <li class="selectnav         d-flex align-items-center gap-2 px-2">
               <span>ALL</span>
             </li>
-            <li class="d-flex align-items-center gap-2 px-2">
+            <li class="selectnav d-flex align-items-center gap-2 px-2">
               <span>xKB1504x</span>
             </li>
           </ul>
@@ -324,6 +324,9 @@
         sentCards.forEach(card => {
           sentContainer.innerHTML += createCard(card);
         });
+
+
+        // this comment is daadade
 
         // Load received cards
         receivedContainer.innerHTML = '';
