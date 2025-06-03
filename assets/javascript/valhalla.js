@@ -1,14 +1,14 @@
 let myCards = [
   {
-    cimg: "/valhalla_project/assets/images/1747122474_main.png",
+    cimg: "/assets/images/1747122474_main.png",
     cdroptext: "CONSUMABLES",
   },
   {
-    cimg: "/valhalla_project/assets/images/1747122449_main.png",
+    cimg: "/assets/images/1747122449_main.png",
     cdroptext: "BOOSTERS",
   },
   {
-    cimg: "/valhalla_project/assets/images/1747122433_main.png",
+    cimg: "/assets/images/1747122433_main.png",
     cdroptext: "CONSMETICS",
   },
 ];
@@ -69,7 +69,7 @@ function cardsFunction() {
     });
 
     if (button) {
-      button.addEventListener("click", function (event) {
+      button.addEventListener("click", function (event) {  
         event.stopPropagation();
         cards.forEach((c) => c.classList.remove("active"));
         card.classList.add("active");
@@ -129,7 +129,7 @@ const sendBtn = document.getElementById("sendBtn");
 const timeset = document.getElementById("timeset");
 const timerContainer = document.getElementById("timerContainer");
 const DAILY_LIMIT_KEY = "valhallaLastSendTime";
-
+let cardDecrease = document.getElementById('cards-deacrease-container');
 function formatTime(ms) {
   const totalMinutes = Math.floor(ms / 60000);
   const hours = Math.floor(totalMinutes / 60);

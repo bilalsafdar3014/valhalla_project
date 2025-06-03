@@ -14,38 +14,38 @@
 }
 @font-face {
   font-family: var(--Erbaum-bold);
-  src: url(/valhalla_project/assets/fonts/Erbaum/Erbaum-Black.ttf);
+  src: url(/assets/fonts/Erbaum/Erbaum-Black.ttf);
 }
 @font-face {
   font-family: var(--Erbaum-light);
-  src: url(/valhalla_project/assets/fonts/Erbaum/Erbaum-Light.ttf);
+  src: url(/assets/fonts/Erbaum/Erbaum-Light.ttf);
 }
 @font-face {
   font-family: var(--Erbaum-medium);
-  src: url(/valhalla_project/assets/fonts/Erbaum/Erbaum-Medium.ttf);
+  src: url(/assets/fonts/Erbaum/Erbaum-Medium.ttf);
 }
 @font-face {
   font-family: var(--Erbaum-regular);
-  src: url(/valhalla_project/assets/fonts/Erbaum/Erbaum-Regular.ttf);
+  src: url(/assets/fonts/Erbaum/Erbaum-Regular.ttf);
 }
 @font-face {
   font-family: var(--OpenSans-bold);
-  src: url(/valhalla_project/assets/fonts/static/OpenSans-Bold.ttf);
+  src: url(/assets/fonts/static/OpenSans-Bold.ttf);
 }
 @font-face {
   font-family: var(--OpenSans-light);
-  src: url(/valhalla_project/assets/fonts/static/OpenSans-Light.ttf);
+  src: url(/assets/fonts/static/OpenSans-Light.ttf);
 }
 @font-face {
   font-family: var(--OpenSans-medium);
-  src: url(/valhalla_project/assets/fonts/static/OpenSans-Medium.ttf);
+  src: url(/assets/fonts/static/OpenSans-Medium.ttf);
 }
 @font-face {
   font-family: var(--OpenSans-regular);
-  src: url(/valhalla_project/assets/fonts/static/OpenSans-Regular.ttf);
+  src: url(/assets/fonts/static/OpenSans-Regular.ttf);
 }
 .bg-img {
-  background-image: url(/valhalla_project/assets/images/bg-cover1.png);
+  background-image: url(/assets/images/bg-cover1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
