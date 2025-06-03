@@ -1,14 +1,14 @@
 let myCards = [
   {
-    cimg: "/valhalla_project/assets/images/1747122474_main.png",
+    cimg: "/assets/images/1747122474_main.png",
     cdroptext: "CONSUMABLES",
   },
   {
-    cimg: "/valhalla_project/assets/images/1747122449_main.png",
+    cimg: "/assets/images/1747122449_main.png",
     cdroptext: "BOOSTERS",
   },
   {
-    cimg: "/valhalla_project/assets/images/1747122433_main.png",
+    cimg: "/assets/images/1747122433_main.png",
     cdroptext: "CONSMETICS",
   },
 ];
@@ -44,7 +44,7 @@ function cardsFunction() {
   }
 
   cardsbody.innerHTML = cardInner;
-  
+
   const cards = document.querySelectorAll(".card");
   const uldropdownmenu = document.querySelector(".uldropdownmenu");
   uldropdownmenu.addEventListener("click", function () {
@@ -111,14 +111,14 @@ function suggestedPlayers() {
   text += "</ul></div>";
 
   playersDiv.innerHTML = text;
-    playersDiv.addEventListener("click", function (event) {
+  playersDiv.addEventListener("click", function (event) {
     if (event.target && event.target.classList.contains("dynamic-dropdown-item")) {
       const selectedPlayer = event.target.textContent;
       console.log("Selected player:", selectedPlayer);
 
       const playerInput = document.getElementById("playerInput");
       playerInput.value = selectedPlayer;
-      
+
       document.getElementById("player-suggestions").style.display = "none";
     }
   });
@@ -177,4 +177,151 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
   updateTimerDisplay();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const receivedCards = [
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "Thor",
+    image: "/assets/images/1747122474_main.png",
+    sender: "Thor",
+    date: "2025-05-29"
+  }
+];
+
+const sentCards = [
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "odin",
+    image: "/assets/images/1747122417_main.png",
+    sender: "Bulma",
+    date: "2025-05-25"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "loky",
+    image: "/assets/images/1747122433_main.png",
+    sender: "Chi-Chi",
+    date: "2025-05-24"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "freyga",
+    image: "/assets/images/1747122449_main.png",
+    sender: "Gohan",
+    date: "2025-05-23"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "thor",
+    image: "/assets/images/1747122474_main.png",
+    sender: "Videl",
+    date: "2025-05-22"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "odin",
+    image: "/assets/images/1747122417_main.png",
+    sender: "Bulma",
+    date: "2025-05-25"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "loky",
+    image: "/assets/images/1747122433_main.png",
+    sender: "Chi-Chi",
+    date: "2025-05-24"
+  },
+  {
+    giftimage: "/assets/images/gift.png",
+    name: "freyga",
+    image: "/assets/images/1747122449_main.png",
+    sender: "Gohan",
+    date: "2025-05-23"
+  }
+];
+
+function createCard(cardData) {
+  return `
+        
+               <div class="card col-lg-4 col-md-6 col-12  bg-transparent p-3">
+      <img src="${cardData.giftimage}" alt="Gift" class="position-absolute top-0 end-0 " ">
+  <div class="card-image overflow-hidden">
+    <img src="${cardData.image}" alt="${cardData.name}" class="img-fluid w-100 mx-auto d-block">
+  </div>
+  <hr style="border-color: white; border-width: 2px; margin-bottom: 0px;">
+  <div class="card-info row text-white">
+    <div class="sender col-6">Sender: ${cardData.sender}</div>
+    <div class="date col-6 text-end">Date: ${cardData.date}</div>
+  </div>
+</div>
+
+            `;
+}
+
+function loadCards() {
+  const sentContainer = document.getElementById('cardSection');
+  const receivedContainer = document.getElementById('cardSectionReceived');
+
+  // Load sent cards
+  sentContainer.innerHTML = '';
+  sentCards.forEach(card => {
+    sentContainer.innerHTML += createCard(card);
+  });
+
+
+  // this comment is daadade
+
+  // Load received cards
+  receivedContainer.innerHTML = '';
+  receivedCards.forEach(card => {
+    receivedContainer.innerHTML += createCard(card);
+  });
+}
+
+
+
+function showSent() {
+  document.getElementById('sentSection').style.display = 'block';
+  document.getElementById('receivedSection').style.display = 'none';
+
+  let btn = document.getElementById('sentBtn');
+  sentBtn.classList.add('active', 'bg-light', 'text-transparent');
+  sentBtn.classList.remove('bg-transparent', 'text-white');
+
+  receivedBtn.classList.remove('active', 'bg-light', 'text-transparent');
+  receivedBtn.classList.add('bg-transparent', 'text-white');
+}
+
+function showReceived() {
+  document.getElementById('sentSection').style.display = 'none';
+  document.getElementById('receivedSection').style.display = 'block';
+
+  let receivedBtn = document.getElementById('receivedBtn');
+
+
+  receivedBtn.classList.add('active', 'bg-light', 'text-transparent');
+  receivedBtn.classList.remove('bg-transparent', 'text-white');
+
+  sentBtn.classList.remove('active', 'bg-light', 'text-transparent');
+  sentBtn.classList.add('bg-transparent', 'text-white');
+
+
+}
+document.getElementById('sentBtn').classList.add('active');
+
+loadCards();
+
 
