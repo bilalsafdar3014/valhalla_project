@@ -14,42 +14,42 @@
 }
 
 @font-face {
-  font-family: var(--Erbaum-bold);
+  font-family: "Erbaum-bold";
   src: url(/assets/fonts/Erbaum/Erbaum-Black.ttf);
 }
 
 @font-face {
-  font-family: var(--Erbaum-light);
+  font-family: "Erbaum-light";
   src: url(/assets/fonts/Erbaum/Erbaum-Light.ttf);
 }
 
 @font-face {
-  font-family: var(--Erbaum-medium);
+  font-family: "Erbaum-medium";
   src: url(/assets/fonts/Erbaum/Erbaum-Medium.ttf);
 }
 
 @font-face {
-  font-family: var(--Erbaum-regular);
+  font-family: "Erbaum-regular";
   src: url(/assets/fonts/Erbaum/Erbaum-Regular.ttf);
 }
 
 @font-face {
-  font-family: var(--OpenSans-bold);
+  font-family: "OpenSans-bold";
   src: url(/assets/fonts/static/OpenSans-Bold.ttf);
 }
 
 @font-face {
-  font-family: var(--OpenSans-light);
+  font-family: "OpenSans-light";
   src: url(/assets/fonts/static/OpenSans-Light.ttf);
 }
 
 @font-face {
-  font-family: var(--OpenSans-medium);
+  font-family: "OpenSans-medium";
   src: url(/assets/fonts/static/OpenSans-Medium.ttf);
 }
 
 @font-face {
-  font-family: var(--OpenSans-regular);
+  font-family: "OpenSans-regular";
   src: url(/assets/fonts/static/OpenSans-Regular.ttf);
 }
 
@@ -149,21 +149,26 @@ p {
   border: 8px solid #322f2b;
   padding: 0;
   outline: 3px solid #f7da94;
+  background-color: black;
 }
 
 
 .dropdown-a-style {
   color: #081a32;
-  background-color: #f7da94;
+  background-color: #f7da94 !important;
 }
 
 .dropdown-a-style:hover {
   background: #f7da94;
+  color: black !important;
+
 }
 
 .dropdown-a-style:focus {
   background-color: #f7da94;
-  color: black;
+  color: black !important;
+  /* border: 5px solid yellow; */
+  /* border: none  !important; */
 }
 /* .close-btn {
   background-color: transparent;
@@ -246,18 +251,22 @@ button:disabled {
 
   h5 {
     color: #081a32;
+
   }
 }
 
 .active {
   background-color: #958e69;
 }
+.bgchangebutton{
+  font-weight: 900 !important;
 
+}
 .active .bgchangebutton {
   background-color: var(--btn-Golden-bg-color);
-
-  h5 {
+  h6 {
     color: #081a32;
+    /* font-weight: 900; */
   }
 
   svg path {
