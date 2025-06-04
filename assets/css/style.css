@@ -418,7 +418,7 @@ a {
 }
 
 .dropdown-center {
-  position: relative;
+  /* position: relative; */
 }
 * {
   box-sizing: border-box;
@@ -427,14 +427,15 @@ a {
   white-space: nowrap;
 }
 .myul {
-  position: absolute;
   inset: 0px auto auto 0px;
   margin: 0px;
   transform: translate3d(766.5px, 79.5px, 0px);
+  right: 0 !important;
 }
 .menu {
   background-color: #010815;
-  top: -23px !important;
+  top: -50px !important;
+  right: -110px !important;
   border-radius: 0px;
   padding-block: 0;
 }
