@@ -178,3 +178,38 @@ document.querySelector("form").addEventListener("submit", function (e) {
   updateTimerDisplay();
 });
 
+
+
+function filterCardsByTemplate(templateName) {
+  const sentContainer = document.getElementById('cardSection');
+  const receivedContainer = document.getElementById('cardSectionReceived');
+
+  const filteredSent = templateName === "ALL"
+    ? sentCards
+    : sentCards.filter(card => card.name.toLowerCase() === templateName.toLowerCase());
+
+  const filteredReceived = templateName === "ALL"
+    ? receivedCards
+    : receivedCards.filter(card => card.name.toLowerCase() === templateName.toLowerCase());
+
+  sentContainer.innerHTML = '';
+  receivedContainer.innerHTML = '';
+
+  filteredSent.forEach(card => {
+    sentContainer.innerHTML += createCard(card);
+  });
+
+  filteredReceived.forEach(card => {
+    receivedContainer.innerHTML += createCard(card);
+  });
+}
+
+
+
+document.getElementById('filterThor').addEventListener('click', function () {
+  filterCardsByTemplate("Thor");
+});
+
+document.getElementById('filterAll').addEventListener('click', function () {
+  filterCardsByTemplate("ALL");
+});

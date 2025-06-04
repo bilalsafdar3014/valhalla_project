@@ -18,7 +18,7 @@
           <img src="/assets/images/logo.svg" alt="" class="d-none d-sm-block" />
           <img src="/assets/images/logo-mini.svg" alt="" class="d-block d-sm-none" />
         </div>
-        <div class="col-6 left-dropdown text-end">
+        <div class="col-6 left-dropdown dropdown-center text-end">
           <div class="dropdown position-relative">
             <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" class="bi bi-list"
@@ -27,57 +27,71 @@
                   d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
               </svg>
             </a>
-
-            <ul class="dropdown-menu header-dropdown position-absolute">
-              <button class="close-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-x-lg"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                </svg>
-              </button>
-              <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-person-fill" viewBox="0 0 16 16">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                  </svg>
-                  DUMY_TEST
-                </a>
+             <ul class="dropdown-menu menu myul dropdown-menu-end position-absolute">
+              <li class="text-end px-4 py-2">
+                <img
+                style="width: 17px;"
+                  src="/assets/images/close-dropdown.png"
+                  class="img-fluid"
+                  alt="close"
+                  role="button"
+                />
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">HOME</a>
+                <a class="dropdown-item" href="/home"
+                  ><img
+                    src="/assets/images/player.png"
+                    class="me-2"
+                  />dummy_test</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="/home">HOME</a></li>
+              <li>
+                <a class="dropdown-item" href="/collection">COLLECTION</a>
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">COLLECTION</a>
+                <a
+                  class="dropdown-item"
+                  href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view"
+                  >EULA</a
+                >
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">EULA</a>
+                <a
+                  class="dropdown-item"
+                  href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view"
+                  >PRIVACY POLICY</a
+                >
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">PRIVACY POLICY</a>
+                <a
+                  class="dropdown-item"
+                  href="https://modernarmor.worldoftanks.com/support/products/wotx/"
+                  >CUSTOMER SUPPORT</a
+                >
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">CUSTOMER
-                  SUPPORT</a>
+                <a class="dropdown-item" href="javascript:;"
+                  >EVENT UN-SUBSCRIPTION</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="javascript:;"
+                  ><img src="/assets/images/logout.png" class="me-2" />LOGOUT</a
+                >
               </li>
               <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">EVENT
-                  UN-SUBSCRIPTION</a>
-              </li>
-              <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                  </svg>
-                  LOGOUT</a>
-              </li>
-              <li>
-                <a class="dropdown-item header-dropdown-item d-flex justify-content-center" href="#">LANGUAGE</a>
+                <a class="dropdown-item text-uppercase" href="javascript:;"
+                  ><img
+                    src="/assets/images/language.png"
+                    class="me-2" />LANGUAGE
+                  <img
+                    src="/assets/images/arrow-down-white.png"
+                    class="ms-2"
+                    width="20"
+                /></a>
               </li>
             </ul>
           </div>
@@ -150,10 +164,10 @@
   <section class="banner py-5">
 
     <div class="container-lg position-relative">
-      <img src="../assets/images/top-left.png" alt="wargaming" class="img-fluid position-absolute top-0 start-0">
-      <img src="../assets/images/top-right.png" alt="wargaming" class="img-fluid position-absolute top-0 end-0">
-      <img src="../assets/images/bottom-left.png" alt="wargaming" class="img-fluid position-absolute bottom-0 start-0">
-      <img src="../assets/images/bottom-right.png" alt="wargaming" class="img-fluid position-absolute bottom-0 end-0">
+      <img style="width: 100px;" src="../assets/images/top-left.png" alt="wargaming" class="img-fluid position-absolute top-0 start-0">
+      <img  style="width: 100px;" src="../assets/images/top-right.png" alt="wargaming" class="img-fluid position-absolute top-0 end-0">
+      <img  style="width: 100px;" src="../assets/images/bottom-left.png" alt="wargaming" class="img-fluid position-absolute bottom-0 start-0">
+      <img  style="width: 100px;" src="../assets/images/bottom-right.png" alt="wargaming" class="img-fluid position-absolute bottom-0 end-0">
 
       <div class="row  px-5 d-flex justify-content-center align-content-center">
 
@@ -200,7 +214,7 @@
       <ul class="container-lg  nav nav-tabs d-flex align-content-center justify-content-center ">
         <li class="nav-item ">
           <a style="font-weight: 700;
-                font-size: 22px;" class="nav-link active border-bottom-0" aria-current="page" href="#">Valhalla</a>
+                font-size: 22px;" class="nav-link-mine active border-bottom-0" aria-current="page" href="#">Valhalla</a>
         </li>
       </ul>
       <div class="tab-content">
@@ -265,15 +279,34 @@
         </div>
         <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
           <div class="d-flex align-items-center gap-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <p class="mb-0">SELECT TEMPLATE</p>
+            <p class="mb-0 text-white">SELECT TEMPLATE</p>
             <img src="../assets/images/arrow-down.png" alt="Arrow" width="26">
           </div>
-          <ul class="dropdown-menu p-2 rounded-5">
+          <ul class="dropdown-menu p-2 rounded-5 custom-dropdown">
             <li>
               <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search template">
             </li>
-            <li><a class="selectnav         dropdown-item" href="#">ALL</a></li>
-            <li><a class="selectnav  dropdown-item" href="#">THOR</a></li>
+            <li><a id="filterAll" class="selectnav dropdown-item text-white" href="#">ALL</a></li>
+            <li><a id="filterThor" class="selectnav dropdown-item text-white" href="#">THOR</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
+          <div class="d-flex align-items-center gap-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="mb-0 text-white">SELECT PLAYER</p>
+            <img src="../assets/images/arrow-down.png" alt="Arrow" width="26">
+          </div>
+          <ul class="dropdown-menu p-2 rounded-5 custom-dropdown">
+            <li>
+              <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search player">
+            </li>
+            <li class="selectnav d-flex align-items-center gap-2 px-2">
+              <span>ALL</span>
+            </li>
+            <li class="selectnav d-flex align-items-center gap-2 px-2">
+              <span>xKB1504x</span>
+            </li>
           </ul>
         </div>
         <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
@@ -299,7 +332,7 @@
       <div class="">
 
         <div id="sentSection">
-          <div id="cardSection" class="row ">
+          <div id="cardSection" class="row justify-content-center">
 
           </div>
         </div>
@@ -378,7 +411,7 @@
       function createCard(cardData) {
         return `
               
-                     <div class="card col-lg-4 col-md-6 col-12  bg-transparent p-3">
+                     <div class="card  col-lg-4 col-md-6 col-12  mb-3 bg-transparent p-3">
             <img src="${cardData.giftimage}" alt="Gift" class="position-absolute top-0 end-0 " ">
         <div class="card-image overflow-hidden">
           <img src="${cardData.image}" alt="${cardData.name}" class="img-fluid w-100 mx-auto d-block">
@@ -457,15 +490,80 @@
         <a href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view">EULA</a><a _
           href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view">PRIVACY POLICY</a><a
           href="https://modernarmor.worldoftanks.com/support/products/wotx/">CUSTOMER
-          SUPPORT</a><a id="ot-sdk-btn" class="ot-sdk-show-settings">COOKIE SETTINGS</a>
+          SUPPORT</a><a class="" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">COOKIE
+          SETTINGS</a>
+        <div class="modal fade" id="cookieSettingsModal" tabindex="-1" aria-labelledby="cookieSettingsModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <img src="../assets/images/wg_logo_secondversion_white1r.png" alt="bhai logo hai"
+                  style="max-width: 120px;">
+                <button style="color: white;" type="button " class="btn-close " data-bs-dismiss="modal"
+                  aria-label="Close">
+                </button>
+              </div>
+
+              <!-- Modal Body -->
+              <div class="modal-body">
+                <h1>Cookies an similar technologies</h1>
+                <p>
+                  When you visit any website, it may store or retrieve information on your browser, mostly in the form
+                  of cookies. This
+                  information might be about you, your preferences or your device and is mostly used to make the site
+                  work as you expect
+                  it to. The information does not usually directly identify you, but it can give you a more personalized
+                  web experience.
+                  Click on the different category headings to find out more.
+                </p>
+                <a href="https://cookiepedia.co.uk/giving-consent-to-cookies" class="text-warning">More
+                  information</a>
+
+                <!-- Cookie Categories -->
+                <div class="accordion" id="cookieAccordion">
+                  <!-- Strictly Necessary Cookies -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Strictly Necessary Cookies
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#cookieAccordion">
+                      <div class="accordion-body">
+                        These cookies are necessary for the website to function and cannot be switched off in our
+                        systems.
+                        They are usually only set in response to actions made by you which amount to a request for
+                        services,
+                        such as setting your privacy preferences, logging in, or filling in forms.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add more categories below if needed -->
+                </div>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Allow All</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Confirm My
+                  Choices</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <img src="../assets/images/logos.png" alt="Wargaming-logo" class="img-fluid my-3">
+      <img src=" ../assets/images/logos.png" alt="Wargaming-logo" class="img-fluid my-3">
       <p style="
-              font-size: 14px;
-              line-height: 19px;
-              color: #fff;
-              opacity: .7;
-            " class="description text-white">
+        font-size: 14px;
+        line-height: 19px;
+        color: #fff;
+        opacity: .7;
+      " class="description text-white">
         © 2025 Wargaming.net. All rights reserved. "Wargaming.net" and "World
         of Tanks," along with their respective logos, are trademarks or
         registered trademarks of Wargaming in the USA and other countries. The
