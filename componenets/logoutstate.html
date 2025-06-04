@@ -223,7 +223,7 @@
             border: none;
             cursor: pointer;
             padding: 10px;
-            position: fixed;
+            position: absolute;
             top: 10px;
             right: 10px;
             z-index: 1000;
@@ -585,7 +585,8 @@
           
           <img src="../assets/iamges/logo.svg" alt="Logo">
           </div>
-          <button class="burger-btn">☰</button>
+          <button class="burger-btn" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 1rem;">
+            ☰</button>
     
     
           <div class="dropdown-menu" id="dropdownMenu">
