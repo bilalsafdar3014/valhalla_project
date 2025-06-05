@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valhalla Blessings - Gratitude Letter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <section class="bg-img">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <a href="/componenets/index.html">
+              <img
+                src="/assets/images/logo.svg"
+                alt=""
+                class="d-none d-sm-block"
+            /></a>
+            <a href="/componenets/index.html"
+              ><img
+                src="/assets/images/logo-mini.svg"
+                alt=""
+                class="d-block d-sm-none"
+            /></a>
+          </div>
+          <div class="col-6 left-dropdown text-end">
+            <div class="dropdown position-relative">
+              <a
+                class="btn"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="#ffffff"
+                  class="bi bi-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+              </a>
+              <ul class="dropdown-menu menu myul position-absolute">
+                <li class="text-end px-4 py-2">
+                  <img
+                    style="width: 17px"
+                    src="/assets/images/close-dropdown.png"
+                    class="img-fluid"
+                    alt="close"
+                    role="button"
+                  />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/home"
+                    ><img
+                      src="/assets/images/player.png"
+                      class="me-2"
+                    />dummy_test</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="/home">HOME</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/componenets/collection_index.html"
+                    >COLLECTION</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view"
+                    >EULA</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view"
+                    >PRIVACY POLICY</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://modernarmor.worldoftanks.com/support/products/wotx/"
+                    >CUSTOMER SUPPORT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="javascript:;"
+                    >EVENT UN-SUBSCRIPTION</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="javascript:;"
+                    ><img
+                      src="/assets/images/logout.png"
+                      class="me-2"
+                    />LOGOUT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-uppercase" href="javascript:;"
+                    ><img
+                      src="/assets/images/language.png"
+                      class="me-2" />LANGUAGE
+                    <img
+                      src="/assets/images/arrow-down-white.png"
+                      class="ms-2"
+                      width="20"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <img src="/assets/images/logo.png" class="img-fluid mb-5" alt="" />
+          <div class="text-center mt-2">
+            <h5>MAY 13 – JUNE 2</h5>
+            <h6 class="event-title">SEND VALHALLA BLESSINGS</h6>
+            <p class="event-slogan">
+              Bless your allies with gifts from the gods!
+            </p>
+            <div class="alert alert-notify d-inline-block">
+              <div
+                class="d-inline-block d-flex gap-3 justify-content-center align-items-center"
+              >
+                <img
+                  src="/assets/images/bell.png"
+                  alt=""
+                  style="width: 25px; height: 30px"
+                />
+                <span
+                  >Daily Blessings Left:
+                  <span class="highlight" id="cards-deacrease-container"
+                    >6/6</span
+                  ></span
+                >
+                <span id="timerContainer">
+                  | Available Again In:
+                  <span class="highlight" id="timeset"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-relative">
+          <div class="row mt-3 justify-content-center" id="getCards"></div>
+        </div>
+        <div class="row mt-5 position-relative w-100 justify-content-center">
+          <div class="col-md-1"></div>
+          <div class="col-md-6 mb-3 search">
+            <form class="d-flex position-relative" role="search">
+              <input
+                id="playerInput"
+                class="form-control me-2 rounded-5 position-relative"
+                type="search"
+                placeholder="Enter Player"
+                aria-label="Search"
+              />
+              <button
+                id="sendBtn"
+                class="send-btn rounded-5 px-3 px-sm-5 position-absolute top-0 bottom-0 position-relative"
+                type="submit"
+                disabled
+              >
+                SEND
+              </button>
+              <div id="player-suggestions" class="position-absolute">
+                <div class="players-list"></div>
+                <div class="refreshbutton position-absolute">
+                  <button
+                    onclick="suggestedPlayers()"
+                    type="button"
+                    class="refreshbuttonstyle rounded-bottom-5"
+                  >
+                    Refresh
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="#f4cc64"
+                      class="bi bi-arrow-clockwise"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                      />
+                      <path
+                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 d-flex justify-content-center">
+            <button
+              onclick="suggestedPlayers()"
+              id="suggestBtn"
+              class="suggest d-flex align-items-center px-4 gap-3 rounded-5"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="white"
+                class="bi bi-lightning-charge-fill mysvg"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"
+                />
+              </svg>
+              <h5 class="pt-1 h5-hover">SUGGEST</h5>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- bilal's work here -->
+
+    <section class="banner py-5">
+
+    <div class="container-lg position-relative">
+      <img style="width: 100px;" src="../assets/images/top-left.png" alt="wargaming" class="img-fluid position-absolute top-0 start-0">
+      <img  style="width: 100px;" src="../assets/images/top-right.png" alt="wargaming" class="img-fluid position-absolute top-0 end-0">
+      <img  style="width: 100px;" src="../assets/images/bottom-left.png" alt="wargaming" class="img-fluid position-absolute bottom-0 start-0">
+      <img  style="width: 100px;" src="../assets/images/bottom-right.png" alt="wargaming" class="img-fluid position-absolute bottom-0 end-0">
+
+      <div class="row  px-5 d-flex justify-content-center align-content-center">
+
+        <div class="col-12 col-md-7  ">
+          <div class="row py-5 d-flex justify-content-center align-content-center text-start">
+
+            <h1 class="text-lg-start text-center col-12">IF YOU ARE LUCKY…</h1>
+            <p style="
+                    font-weight: 400;
+                    font-size: 22px;
+                    letter-spacing: .5px;
+                    color: #c9cbcd;
+                  " class="description text-lg-start text-center col-12">Keep sending to increase the chances of
+              getting
+              Odin’s favor. Odin
+              does not give freely—he challenges those he deems strong enough. When a player earns Odin's attention,
+              they
+              receive
+              <span style="
+                      color: #fedb94;
+                      font-size: 22px;
+                      font-weight: 700;
+                      line-height: 100%;
+                    "> a mysterious letter containing a special task.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <img src="../assets/images/1747122417_main.png" alt="wargaming" class="pb-5  img-fluid"
+              style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+  </section>
+  <!-- Valhalla Section sent ,received ,rare number only-->
+  <section class="valhala py-5">
+    <div>
+      <ul class="container-lg  nav nav-tabs d-flex align-content-center justify-content-center ">
+        <li class="nav-item ">
+          <a style="font-weight: 700;
+                font-size: 22px;" class="nav-link-mine active border-bottom-0" aria-current="page" href="#">Valhalla</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="container border border-top-0">
+          <div class="tab-pane fade show active p-4">
+            <div class="d-flex flex-nowrap justify-content-center align-content-center ">
+              <div class=" d-flex flex-nowrap justify-content-end ">
+                <div class="row justify-content-center align-content-center text-center">
+                  <h1 class="col-12">7</h1>
+                  <p style="color: rgb(255, 204, 102);" class="col-12">SENT</p>
+                </div>
+              </div>
+              <div class=" border-start border-end d-flex justify-content-center px-0">
+                <div class="row justify-content-center align-content-center text-center ">
+                  <h1 class="col-12">1</h1>
+                  <p style="color: rgb(255, 204, 102);" class="col-12">RECEIVED</p>
+                </div>
+
+              </div>
+              <div class=" d-flex flex-nowrapjustify-content-start ">
+                <div class="row justify-content-center align-content-center text-center">
+                  <h1 class="col-12">0</h1>
+                  <p style="color: rgb(255, 204, 102);" class="col-12">RARE</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- History Section -->
+  <section class="history container-lg">
+    <div class="row gap-3 gap-md-0 align-items-center ">
+      <div class="col-12 col-md-6">
+        <h1 class="text-center text-md-start">HISTORY</h1>
+      </div>
+      <div class="col-12 col-md-6 d-flex justify-content-lg-end justify-content-center">
+        <div class="d-flex rounded-pill overflow-hidden border border-2 border-white w-auto" style="height: 56px;">
+          <button class="btn btn-lg bg-transparent text-white rounded-start-4 rounded-end-0" id="receivedBtn"
+            onclick="showReceived()">RECEIVED</button>
+          <button class="btn btn-lg bg-light text-transparent active rounded-end-4 rounded-start-0" id="sentBtn"
+            onclick="showSent()">SENT</button>
+
+        </div>
+      </div>
+
+    </div>
+    <section class="dropdown m-4">
+      <div class="row ">
+        <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
+          <div id="date-picker" class="d-flex align-items-center gap-2 cursor-pointer">
+            <p class="mb-0">CUSTOM PERIOD</p>
+            <label for="calendar">
+              <img src="../assets/images/callender.png" alt="Calendar" width="26"
+                onclick="document.getElementById('calendar').showPicker()">
+              <input type="date" id="calendar" style="display: none;">
+            </label>
+
+          </div>
+        </div>
+        <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
+          <div class="d-flex align-items-center gap-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="mb-0 text-white">SELECT TEMPLATE</p>
+            <img src="../assets/images/arrow-down.png" alt="Arrow" width="26">
+          </div>
+          <ul class="dropdown-menu p-2 rounded-5 custom-dropdown">
+            <li>
+              <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search template">
+            </li>
+            <li><a id="filterAll" class="selectnav dropdown-item text-white" href="#">ALL</a></li>
+            <li><a id="filterThor" class="selectnav dropdown-item text-white" href="#">THOR</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col-md-auto justify-content-lg-start d-flex justify-content-center">
+          <div class="d-flex align-items-center gap-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p class="mb-0 text-white">SELECT PLAYER</p>
+            <img src="../assets/images/arrow-down.png" alt="Arrow" width="26">
+          </div>
+          <ul class="dropdown-menu p-2 rounded-5 custom-dropdown">
+            <li>
+              <input type="search" class="form-control mb-2 rounded-pill" placeholder="Search player">
+            </li>
+            <li class="selectnav d-flex align-items-center gap-2 px-2">
+              <span>ALL</span>
+            </li>
+            <li class="selectnav d-flex align-items-center gap-2 px-2">
+              <span>xKB1504x</span>
+            </li>
+          </ul>
+        </div>
+      
+      </div>
+    </section>
+    <section class=" py-5 container-md container-sm  justify-content-sm-center justify-content-md-center">
+      <div class="">
+
+        <div id="sentSection">
+          <div id="cardSection" class="row justify-content-center">
+
+          </div>
+        </div>
+
+        <div id="receivedSection" class="row " style="display: none;">
+          <div id="cardSectionReceived" class="row ">
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+
+      const receivedCards = [
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "Thor",
+          image: "../assets/images/1747122474_main.png",
+          sender: "Thor",
+          date: "2025-05-29"
+        }
+      ];
+
+      const sentCards = [
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "odin",
+          image: "../assets/images/1747122417_main.png",
+          sender: "Bulma",
+          date: "2025-05-25"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "loky",
+          image: "../assets/images/1747122433_main.png",
+          sender: "Chi-Chi",
+          date: "2025-05-24"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "freyga",
+          image: "../assets/images/1747122449_main.png",
+          sender: "Gohan",
+          date: "2025-05-23"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "thor",
+          image: "../assets/images/1747122474_main.png",
+          sender: "Videl",
+          date: "2025-05-22"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "odin",
+          image: "../assets/images/1747122417_main.png",
+          sender: "Bulma",
+          date: "2025-05-25"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "loky",
+          image: "../assets/images/1747122433_main.png",
+          sender: "Chi-Chi",
+          date: "2025-05-24"
+        },
+        {
+          giftimage: "../assets/images/gift.png",
+          name: "freyga",
+          image: "../assets/images/1747122449_main.png",
+          sender: "Gohan",
+          date: "2025-05-23"
+        }
+      ];
+
+      function createCard(cardData) {
+        return `
+              
+                     <div class="card  col-lg-4 col-md-6 col-12  mb-3 bg-transparent p-3">
+            <img src="${cardData.giftimage}" alt="Gift" class="position-absolute top-0 end-0 " ">
+        <div class="card-image overflow-hidden">
+          <img src="${cardData.image}" alt="${cardData.name}" class="img-fluid w-100 mx-auto d-block">
+        </div>
+        <hr style="border-color: white; border-width: 2px; margin-bottom: 0px;">
+        <div class="card-info row text-white">
+          <div class="sender col-6">Sender: ${cardData.sender}</div>
+          <div class="date col-6 text-end">Date: ${cardData.date}</div>
+        </div>
+      </div>
+      
+                  `;
+      }
+
+      function loadCards() {
+        const sentContainer = document.getElementById('cardSection');
+        const receivedContainer = document.getElementById('cardSectionReceived');
+
+        // Load sent cards
+        sentContainer.innerHTML = '';
+        sentCards.forEach(card => {
+          sentContainer.innerHTML += createCard(card);
+        });
+
+
+        // this comment is daadade
+
+        // Load received cards
+        receivedContainer.innerHTML = '';
+        receivedCards.forEach(card => {
+          receivedContainer.innerHTML += createCard(card);
+        });
+      }
+
+
+
+      function showSent() {
+        document.getElementById('sentSection').style.display = 'block';
+        document.getElementById('receivedSection').style.display = 'none';
+
+        let btn = document.getElementById('sentBtn');
+        sentBtn.classList.add('active', 'bg-light', 'text-transparent');
+        sentBtn.classList.remove('bg-transparent', 'text-white');
+
+        receivedBtn.classList.remove('active', 'bg-light', 'text-transparent');
+        receivedBtn.classList.add('bg-transparent', 'text-white');
+      }
+
+      function showReceived() {
+        document.getElementById('sentSection').style.display = 'none';
+        document.getElementById('receivedSection').style.display = 'block';
+
+        let receivedBtn = document.getElementById('receivedBtn');
+
+
+        receivedBtn.classList.add('active', 'bg-light', 'text-transparent');
+        receivedBtn.classList.remove('bg-transparent', 'text-white');
+
+        sentBtn.classList.remove('active', 'bg-light', 'text-transparent');
+        sentBtn.classList.add('bg-transparent', 'text-white');
+
+
+      }
+      document.getElementById('sentBtn').classList.add('active');
+
+      loadCards();
+
+
+    </script>
+  </section>
+  <!-- footer -->
+  <section class="wrapper">
+    <div class="container footer text-center">
+      <div
+        class="links d-flex align-content-center justify-content-center flex-wrap gap-5 text-decoration-none text-white">
+        <a href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view">EULA</a><a _
+          href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view">PRIVACY POLICY</a><a
+          href="https://modernarmor.worldoftanks.com/support/products/wotx/">CUSTOMER
+          SUPPORT</a><a class="" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">COOKIE
+          SETTINGS</a>
+        <div class="modal fade" id="cookieSettingsModal" tabindex="-1" aria-labelledby="cookieSettingsModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <img src="../assets/images/wg_logo_secondversion_white1r.png" alt="bhai logo hai"
+                  style="max-width: 120px;">
+                <button style="color: white;" type="button " class="btn-close " data-bs-dismiss="modal"
+                  aria-label="Close">
+                </button>
+              </div>
+
+              <!-- Modal Body -->
+              <div class="modal-body">
+                <h1>Cookies an similar technologies</h1>
+                <p>
+                  When you visit any website, it may store or retrieve information on your browser, mostly in the form
+                  of cookies. This
+                  information might be about you, your preferences or your device and is mostly used to make the site
+                  work as you expect
+                  it to. The information does not usually directly identify you, but it can give you a more personalized
+                  web experience.
+                  Click on the different category headings to find out more.
+                </p>
+                <a href="https://cookiepedia.co.uk/giving-consent-to-cookies" class="text-warning">More
+                  information</a>
+
+                <!-- Cookie Categories -->
+                <div class="accordion" id="cookieAccordion">
+                  <!-- Strictly Necessary Cookies -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Strictly Necessary Cookies
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#cookieAccordion">
+                      <div class="accordion-body">
+                        These cookies are necessary for the website to function and cannot be switched off in our
+                        systems.
+                        They are usually only set in response to actions made by you which amount to a request for
+                        services,
+                        such as setting your privacy preferences, logging in, or filling in forms.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add more categories below if needed -->
+                </div>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Allow All</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Confirm My
+                  Choices</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src=" ../assets/images/logos.png" alt="Wargaming-logo" class="img-fluid my-3">
+      <p style="
+        font-size: 14px;
+        line-height: 19px;
+        color: #fff;
+        opacity: .7;
+      " class="description text-white">
+        © 2025 Wargaming.net. All rights reserved. "Wargaming.net" and "World
+        of Tanks," along with their respective logos, are trademarks or
+        registered trademarks of Wargaming in the USA and other countries. The
+        "PS" Family logo is a registered trademark, and "PS4" is a trademark of
+        Sony Interactive Entertainment Inc. "Xbox" and the Xbox logos are
+        trademarks of the Microsoft group of companies and are used under
+        license from Microsoft. </p>
+    </div>
+  </section>
+    <script src="/assets/javascript/valhalla.js"></script>
+  </body>
+</html>

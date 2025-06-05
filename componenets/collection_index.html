@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Collection</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .collection {
+        background-image: url("/assets/images/bg-cover.png");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 50px 0;
+      }
+      .collection-card {
+        background: url("/assets/images/123card.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 265px;
+        min-height: 148px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 1.5rem;
+      }
+      .collection-card .name {
+        color: #fc6 !important;
+      }
+      .collection-card .name {
+        font-family: "Erbaum-bold";
+        font-weight: 900;
+        font-size: 21.24px;
+        text-transform: uppercase;
+      }
+      .collection-card .value {
+        color: #fff;
+        font-size: 32px;
+        font-family: "Erbaum-bold";
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .collection-letter img {
+        border-radius: 8px;
+      }
+      .locked {
+        opacity: 0.5;
+      }
+      .event-line {
+        height: 2px;
+        background: white;
+        margin: 5px 0;
+      }
+      @media (max-width: 992px) {
+        .event-title {
+          font-size: 48px;
+          line-height: 1;
+        }
+      }
+      .event-title {
+        font-size: "Erbaum-bold";
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 0;
+      }
+      .platform-option.active {
+        font-family: "Erbaum-bold";
+        background: #fff;
+        color: black;
+      }
+      .platform-option {
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        font-weight: 400;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+      .platform-option:not(.active) {
+        background: #13131300 !important;
+        color: #fff;
+      }
+      .event {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        gap: 1.5rem;
+      }
+      @media (max-width: 992px) {
+        .event .event-name {
+          font-size: 17.61px;
+          line-height: 37.17px;
+        }
+      }
+      .event .event-name {
+        font-family: "Erbaum-light";
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      p {
+        margin-top: 0;
+      }
+      .event .event-line {
+        flex: 1;
+        height: 1px;
+        background: #fff;
+      }
+      @media (max-width: 992px) {
+        .event .letter-count {
+          font-size: 15.18px;
+          line-height: 37.17px;
+        }
+      }
+      .event .letter-count {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      .section-title {
+        font-size: 1.5rem;
+        margin: 40px 0 20px;
+      }
+      .dropdown-center {
+        position: relative;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .dropdown-toggle {
+        white-space: nowrap;
+      }
+      ul {
+        position: absolute;
+        inset: 0px auto auto 0px;
+        margin: 0px;
+        transform: translate3d(766.5px, 79.5px, 0px);
+      }
+      .menu {
+        background-color: #010815  !important;
+        top: -23px !important;
+        border-radius: 0px;
+        padding-block: 0;
+      }
+      .dropdown-menu {
+        --bs-dropdown-z-index: 1000;
+        --bs-dropdownmin-width: 10rem;
+        --bs-dropdown-padding-x: 0;
+        --bs-dropdown-padding-y: 0.5rem;
+        --bs-dropdown-spacer: 0.125rem;
+        --bs-dropdown-font-size: 1rem;
+        --bs--dropdown-color: #212529;
+        --bs-dropdown-bg: #fff;
+        --bs-dropdown-border-color: rgba(0, 0, 0, 0.175);
+        --bs-dropdown-border-radius: 0.375rem;
+        --bs-dropdown-border-width: 1px;
+        --bs-dropdown-inner-border-radius: calc(
+          var(--bs-border-radius) - var(--bs-border-width)
+        );
+        --bs-dropdown-divider-bg: rgba(0, 0, 0, 0.175);
+        --bs-dropdown-divider-margin-y: 0.5rem;
+        --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        --bs-dropdown-link-color: #212529;
+        --bs-dropdown-link-hover-color: #fff;
+        --bs-dropdown-link-hover-bg: #212529;
+        --bs-dropdown-link-active-color: #fff;
+        --bs-dropdown-link-active-bg: #0d6efd;
+        --bs-dropdown-link-disabled-color: rgba(33, 37, 41, 0.5);
+        --bs-dropdown-item-padding-x: 1rem;
+        --bs-dropdown-item-padding-y: 0.25rem;
+        --bs-dropdown-header-color: #6c757d;
+        --bs-dropdown-header-padding-x: 1rem;
+        --bs-dropdown-header-padding-y: 0.5rem;
+        z-index: 1000;
+        display: none;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, 0.175);
+      }
+      .text-end {
+        text-align: right !important;
+      }
+      .py-2 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+      .px-4 {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+      }
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+      [role="button"] {
+        cursor: pointer;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .menu a {
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        padding: 12px 40px;
+        display: block;
+        font-family: var(--OpenSans-light);
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .dropdown-item {
+        width: 100%;
+        clear: both;
+        white-space: nowrap;
+        background-color: #97898900;
+        border: 0;
+        border-radius: 0;
+      }
+      .gap-2 {
+        gap: 0.5rem !important;
+      }
+
+      .dropdown-divider {
+        border: none;
+        height: 2px;
+        background: #fff3;
+        overflow: hidden;
+        opacity: 1;
+      }
+      .my-0 {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      hr {
+        color: inherit;
+      }
+      .text-white {
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+      }
+      .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      .px-0 {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      .row {
+        /* --bs-gytter-x: 1.5rem;
+    --bs-gutter-y: 0; */
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
+        margin-left: calc(-0.5 * var(--bs-gutter-x));
+      }
+      @media (min-width: 768px) {
+        .col-md-6 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+      }
+      .row > * {
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-top: var(--bs-gutter-y);
+      }
+      .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+      }
+      .collection-letter {
+        position: relative;
+        background: #fff3;
+        border: 0.79px solid rgba(255, 255, 255, 0.2);
+        border-radius: 13.73px;
+        padding: 1rem;
+      }
+      /* .mb-3 {
+    margin-bottom: 1rem !important;
+} */
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .tags {
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        z-index: 5;
+      }
+      .mb-3 {
+        margin-bottom: 1rem !important;
+      }
+      .end-0 {
+        right: 0 !important;
+      }
+      .top-0 {
+        top: 0 !important;
+      }
+      .scroll-top {
+        cursor: pointer;
+        position: fixed;
+        z-index: 9999;
+        bottom: 32px;
+        right: 32px;
+      }
+      .rare-badge {
+        position: absolute;
+        bottom: 0;
+        left: 1;
+        transform: translate(-10%, 60%);
+        background-color: #ffc107;
+        color: #000;
+        font-weight: bold;
+        padding: 4px 12px;
+        border-radius: 999px;
+        z-index: 2;
+        white-space: nowrap;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .collection-letter {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="collection">
+      <div class="container">
+        <header class="mb-5 d-flex justify-content-between align-items-center">
+          <img
+            src="/assets/images/logo.svg"
+            alt="logo"
+            class="img-fluid d-none d-md-block"
+          />
+          <img
+            src="/assets/images/logo-mini.svg"
+            alt="logo-mini"
+            class="img-fluid d-block d-md-none"
+          />
+          <div class="dropdown dropdown-center">
+            <img
+              src="/assets/images/burger-menu.svg"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              role="button"
+              alt="menu"
+            />
+            <ul class="dropdown-menu menu  dropdown-menu-end">
+              <li class="text-end px-4 py-2">
+                <img
+                  src="/assets/images/close-dropdown.png"
+                  class="img-fluid"
+                  alt="close"
+                  role="button"
+                />
+              </li>
+              <li>
+                <a class="dropdown-item" href="/home"
+                  ><img
+                    src="/assets/images/player.png"
+                    class="me-2"
+                  />dummy_test</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="/home">HOME</a></li>
+              <li>
+                <a class="dropdown-item" href="/collection">COLLECTION</a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view"
+                  >EULA</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view"
+                  >PRIVACY POLICY</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://modernarmor.worldoftanks.com/support/products/wotx/"
+                  >CUSTOMER SUPPORT</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="javascript:;"
+                  >EVENT UN-SUBSCRIPTION</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="javascript:;"
+                  ><img src="/assets/images/logout.png" class="me-2" />LOGOUT</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item text-uppercase" href="javascript:;"
+                  ><img
+                    src="/assets/images/language.png"
+                    class="me-2" />LANGUAGE
+                  <img
+                    src="/assets/images/arrow-down-white.png"
+                    class="ms-2"
+                    width="20"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </header>
+
+        <h1 class="event-title mb-5">MY COLLECTION</h1>
+
+        <div class="d-flex justify-content-center flex-wrap gap-4 mb-5">
+          <div class="collection-card">
+            <div class="name">COLLECTIONS</div>
+            <div class="value" id="collections-count">1/1</div>
+          </div>
+          <div class="collection-card">
+            <div class="name">TOTAL LETTERS</div>
+            <div class="value" id="total-letters-count">1/4</div>
+          </div>
+          <div class="collection-card">
+            <div class="name">RARE</div>
+            <div class="value" id="rare-count">1</div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="event-title">COLLECTION</h2>
+          <div
+            class="d-inline-flex border border-white rounded-pill overflow-hidden"
+            style="border: 1px solid white; border-radius: 2px; cursor: pointer"
+          >
+            <div class="platform-option active" onclick="filterLetters('all')">
+              ALL
+            </div>
+            <div class="platform-option" onclick="filterLetters('unlocked')">
+              UNLOCKED
+            </div>
+          </div>
+        </div>
+
+        <div id="event-list"></div>
+
+        <div class="row" id="letter-grid"></div>
+      </div>
+    </div>
+    <div id="scroll-top" class="scroll-top" style="display: block">
+      <img src="/assets/images/go-top.png" alt="" />
+    </div>
+
+    <script>
+      const data = {
+        collections: [
+          {
+            name: "Valhalla",
+            letters: [
+              { url: "/assets/images/1747122474_main.png", unlocked: true },
+              { url: "/assets/images/1747122449_main.png", unlocked: false },
+              { url: "/assets/images/1747122433_main.png", unlocked: false },
+              {
+                url: "/assets/images/1747122417_main.png",
+                unlocked: false,
+                rare: true,
+              },
+            ],
+          },
+        ],
+      };
+
+      function renderCollectionStats() {
+        const totalCollections = data.collections.length;
+        const totalLetters = data.collections.reduce(
+          (sum, col) => sum + col.letters.length,
+          0
+        );
+        const unlockedLetters = data.collections.reduce(
+          (sum, col) => sum + col.letters.filter((l) => l.unlocked).length,
+          0
+        );
+        const rareLetters = data.collections.reduce(
+          (sum, col) => sum + col.letters.filter((l) => l.rare).length,
+          0
+        );
+
+        document.getElementById(
+          "collections-count"
+        ).textContent = `${totalCollections}/${totalCollections}`;
+        document.getElementById(
+          "total-letters-count"
+        ).textContent = `${unlockedLetters}/${totalLetters}`;
+        document.getElementById("rare-count").textContent = rareLetters;
+      }
+
+      function renderEventList() {
+        const eventList = document.getElementById("event-list");
+        eventList.innerHTML = "";
+        data.collections.forEach((col) => {
+          const unlocked = col.letters.filter(
+            (letter) => letter.unlocked
+          ).length;
+          const total = col.letters.length;
+          eventList.innerHTML += `
+                <div class="event">
+                  <p class="event-name">${col.name}</p>
+                  <div class="event-line"></div>
+                  <p class="letters-count">${unlocked}/${total}</p>
+                </div>`;
+        });
+      }
+      const letterGrid = document.getElementById("letter-grid");
+      const eventList = document.getElementById("event-list");
+
+      function renderLetters(filter = "all") {
+        letterGrid.innerHTML = "";
+        eventList.innerHTML = "";
+
+        data.collections.forEach((collection) => {
+          const unlockedLetters = collection.letters.filter((l) => l.unlocked);
+          const totalLetters = collection.letters.length;
+          const rareCount = collection.letters.filter(
+            (l) => l.rare && l.unlocked
+          ).length;
+
+          document.getElementById("collections-count").innerText = `1/1`;
+          document.getElementById(
+            "total-letters-count"
+          ).innerText = `${unlockedLetters.length}/${totalLetters}`;
+          document.getElementById("rare-count").innerText = `${rareCount}`;
+
+          const event = document.createElement("div");
+          event.className = "event mb-3";
+
+          event.innerHTML = `
+        <p class="event-name">${collection.name}</p>
+        <div class="event-line"></div>
+        <p class="letter-count">${unlockedLetters.length}/${totalLetters}</p>
+      `;
+
+          eventList.appendChild(event);
+
+          collection.letters.forEach((letter, idx) => {
+            const isUnlocked = letter.unlocked;
+            const isRare = letter.rare;
+            if (filter === "unlocked" && !isUnlocked) return;
+
+            const col = document.createElement("div");
+            col.className = "col-md-6 mb-3";
+
+            col.innerHTML = `
+          <div class="collection-letter ${!isUnlocked ? "locked" : ""}">
+            <img src="${letter.url}" class="img-fluid" />
+            ${isRare ? '<div class="rare-badge">RARE</div>' : ""}
+          </div>
+        `;
+
+            letterGrid.appendChild(col);
+          });
+        });
+      }
+
+      function filterLetters(type) {
+        document.querySelectorAll(".platform-option").forEach((el) => {
+          el.classList.remove("active");
+        });
+        const activeBtn =
+          type === "all"
+            ? document.querySelector(".platform-option:nth-child(1)")
+            : document.querySelector(".platform-option:nth-child(2)");
+        activeBtn.classList.add("active");
+
+        renderLetters(type);
+      }
+
+      // Initial render
+      renderLetters();
+
+      renderCollectionStats();
+      renderEventList();
+      renderLetters();
+
+      function filterLetters(option) {
+        document
+          .querySelectorAll(".platform-option")
+          .forEach((el) => el.classList.remove("active"));
+        const index = option === "all" ? 0 : 1;
+        document
+          .querySelectorAll(".platform-option")
+          [index].classList.add("active");
+        renderLetters(option);
+      }
+
+      window.onscroll = function () {
+        const btn = document.getElementById("scroll-top");
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
+      document
+        .getElementById("scroll-top")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
