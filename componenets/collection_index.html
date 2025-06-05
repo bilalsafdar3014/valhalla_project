@@ -9,6 +9,46 @@
       rel="stylesheet"
     />
     <style>
+      @font-face {
+  font-family: "Erbaum-bold";
+  src: url(/assets/fonts/Erbaum/Erbaum-Black.ttf);
+}
+
+@font-face {
+  font-family: "Erbaum-light";
+  src: url(/assets/fonts/Erbaum/Erbaum-Light.ttf);
+}
+
+@font-face {
+  font-family: "Erbaum-medium";
+  src: url(/assets/fonts/Erbaum/Erbaum-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Erbaum-regular";
+  src: url(/assets/fonts/Erbaum/Erbaum-Regular.ttf);
+}
+
+@font-face {
+  font-family: "OpenSans-bold";
+  src: url(/assets/fonts/static/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "OpenSans-light";
+  src: url(/assets/fonts/static/OpenSans-Light.ttf);
+}
+
+@font-face {
+  font-family: "OpenSans-medium";
+  src: url(/assets/fonts/static/OpenSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: "OpenSans-regular";
+  src: url(/assets/fonts/static/OpenSans-Regular.ttf);
+}
+
       .collection {
         background-image: url("/assets/images/bg-cover.png");
         background-size: cover;
@@ -78,12 +118,12 @@
         color: black;
       }
       .platform-option {
-        padding: 10px 20px;
+        padding: 1rem 3rem;
         cursor: pointer;
         transition: all 0.3s ease;
         text-align: center;
-        font-weight: 400;
-        font-size: 22px;
+        font-weight: 500;
+        font-size: 0.95rem;
         text-transform: uppercase;
       }
       .platform-option:not(.active) {
@@ -233,7 +273,7 @@
         border-radius: 0;
       }
       .gap-2 {
-        gap: 0.5rem !important;
+        gap: .5rem !important;
       }
 
       .dropdown-divider {
@@ -289,6 +329,7 @@
       }
       .collection-letter {
         position: relative;
+        display: inline-block;
         background: #fff3;
         border: 0.79px solid rgba(255, 255, 255, 0.2);
         border-radius: 13.73px;
@@ -303,12 +344,6 @@
       }
       img {
         vertical-align: middle;
-      }
-      .tags {
-        position: absolute;
-        bottom: -10px;
-        left: 20px;
-        z-index: 5;
       }
       .mb-3 {
         margin-bottom: 1rem !important;
@@ -326,40 +361,167 @@
         bottom: 32px;
         right: 32px;
       }
-      .rare-badge {
-        position: absolute;
-        bottom: 0;
-        left: 1;
-        transform: translate(-10%, 60%);
-        background-color: #ffc107;
-        color: #000;
-        font-weight: bold;
-        padding: 4px 12px;
-        border-radius: 999px;
-        z-index: 2;
-        white-space: nowrap;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      .rounded-pill-1 {
+        border-radius: var(--bs-border-radius-pill) !important;
       }
 
+      .badge.rare {
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
+        font-size: 14.5px;
+        letter-spacing: .48px;
+        text-align:center;
+        text-transform:uppercase;
+        color: #000;
+        background: linear-gradient(
+            111.82deg,
+          #aa9356 2.57%,
+          #fff1cb 44.65%,
+          #b9a675 94.12%,
+          #968419 144.32%
+        );
+        padding: 0.35rem 0.65rem;
+        font-weight: 400;
+        font-family: "Erbaum-bold";
+      }
+      .tags {
+        position: absolute;
+        bottom: -10px;
+        left: 20px;
+        z-index: 5;
+      }
       .collection-letter {
         position: relative;
       }
+      @media (max-width: 592px) {
+        .platform-option {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      /* Footer Wrapper */
+.wrapper {
+  background: #0b0c0e;
+  padding: 2rem 0;
+  border-top: 1px solid transparent;
+}
+
+/* Footer Links */
+.footer .links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.footer .links a:hover {
+  color: #f7c948;
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Footer Logo */
+.footer img {
+  max-height: 50px;
+  width: auto;
+}
+
+/* Footer Description */
+.footer .description {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cookie Modal Styling */
+.modal-content {
+  border-radius: 10px;
+  color: white;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.modal-body h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  background-color: #1c1d21;
+  color: white;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #2b2c31;
+}
+
+.accordion-body {
+  background-color: #1c1d21;
+  color: #ccc;
+}
+
+/* Buttons in Modal */
+.modal-footer .btn-primary {
+  background-color: #f7c948;
+  border-color: #f7c948;
+  color: #0b0c0e;
+  font-weight: 600;
+}
+
+.modal-footer .btn-outline-secondary {
+  color: white;
+  border-color: #888;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .footer .links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .modal-body h1 {
+    font-size: 1.25rem;
+  }
+
+  .footer .description {
+    padding: 0 1rem;
+  }
+}
+
     </style>
   </head>
   <body>
     <div class="collection">
       <div class="container">
         <header class="mb-5 d-flex justify-content-between align-items-center">
-          <img
+          <a href="/componenets/index.html">
+              <img
             src="/assets/images/logo.svg"
             alt="logo"
-            class="img-fluid d-none d-md-block"
+            class="img-fluid d-none d-md-block " style="cursor: pointer;"
           />
-          <img
+          <!-- <img
             src="/assets/images/logo-mini.svg"
-            alt="logo-mini"
-            class="img-fluid d-block d-md-none"
-          />
+            alt="logo"
+            class="img-fluid d-none d-md-block"
+          /> -->
+          </a>
           <div class="dropdown dropdown-center">
             <img
               src="/assets/images/burger-menu.svg"
@@ -454,16 +616,16 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="event-title">COLLECTION</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3 gap-2" >
+          <h2 class="event-title m-0">COLLECTION</h2>
           <div
             class="d-inline-flex border border-white rounded-pill overflow-hidden"
             style="border: 1px solid white; border-radius: 2px; cursor: pointer"
           >
-            <div class="platform-option active" onclick="filterLetters('all')">
+            <div class="platform-option active px-3 py-1" onclick="filterLetters('all')">
               ALL
             </div>
-            <div class="platform-option" onclick="filterLetters('unlocked')">
+            <div class="platform-option px-3 py-1"  onclick="filterLetters('unlocked')">
               UNLOCKED
             </div>
           </div>
@@ -474,12 +636,102 @@
         <div class="row" id="letter-grid"></div>
       </div>
     </div>
+    <section class="wrapper">
+    <div class="container footer text-center">
+      <div
+        class="links d-flex align-content-center justify-content-center flex-wrap gap-5 text-decoration-none text-white">
+        <a href="https://legal.wargaming.net/en/user-documents/eula/end-user-license-agreement/view">EULA</a><a _
+          href="https://legal.wargaming.net/en/user-documents/privacy/privacy-policy/view">PRIVACY POLICY</a><a
+          href="https://modernarmor.worldoftanks.com/support/products/wotx/">CUSTOMER
+          SUPPORT</a><a class="" data-bs-toggle="modal" data-bs-target="#cookieSettingsModal">COOKIE
+          SETTINGS</a>
+        <div class="modal fade" id="cookieSettingsModal" tabindex="-1" aria-labelledby="cookieSettingsModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <img src="../assets/images/wg_logo_secondversion_white1r.png" alt="bhai logo hai"
+                  style="max-width: 120px;">
+                <button style="color: white;" type="button " class="btn-close " data-bs-dismiss="modal"
+                  aria-label="Close">
+                </button>
+              </div>
+
+              <!-- Modal Body -->
+              <div class="modal-body">
+                <h1>Cookies an similar technologies</h1>
+                <p>
+                  When you visit any website, it may store or retrieve information on your browser, mostly in the form
+                  of cookies. This
+                  information might be about you, your preferences or your device and is mostly used to make the site
+                  work as you expect
+                  it to. The information does not usually directly identify you, but it can give you a more personalized
+                  web experience.
+                  Click on the different category headings to find out more.
+                </p>
+                <a href="https://cookiepedia.co.uk/giving-consent-to-cookies" class="text-warning">More
+                  information</a>
+
+                <!-- Cookie Categories -->
+                <div class="accordion" id="cookieAccordion">
+                  <!-- Strictly Necessary Cookies -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Strictly Necessary Cookies
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#cookieAccordion">
+                      <div class="accordion-body">
+                        These cookies are necessary for the website to function and cannot be switched off in our
+                        systems.
+                        They are usually only set in response to actions made by you which amount to a request for
+                        services,
+                        such as setting your privacy preferences, logging in, or filling in forms.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add more categories below if needed -->
+                </div>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Allow All</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Confirm My
+                  Choices</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src=" ../assets/images/logos.png" alt="Wargaming-logo" class="img-fluid my-3">
+      <p style="
+        font-size: 14px;
+        line-height: 19px;
+        color: #fff;
+        opacity: .7;
+      " class="description text-white">
+        © 2025 Wargaming.net. All rights reserved. "Wargaming.net" and "World
+        of Tanks," along with their respective logos, are trademarks or
+        registered trademarks of Wargaming in the USA and other countries. The
+        "PS" Family logo is a registered trademark, and "PS4" is a trademark of
+        Sony Interactive Entertainment Inc. "Xbox" and the Xbox logos are
+        trademarks of the Microsoft group of companies and are used under
+        license from Microsoft. </p>
+    </div>
+  </section>
     <div id="scroll-top" class="scroll-top" style="display: block">
       <img src="/assets/images/go-top.png" alt="" />
     </div>
 
     <script>
-      const data = {
+            const data = {
         collections: [
           {
             name: "Valhalla",
@@ -537,7 +789,7 @@
                 </div>`;
         });
       }
-      const letterGrid = document.getElementById("letter-grid");
+       const letterGrid = document.getElementById("letter-grid");
       const eventList = document.getElementById("event-list");
 
       function renderLetters(filter = "all") {
@@ -551,7 +803,7 @@
             (l) => l.rare && l.unlocked
           ).length;
 
-          document.getElementById("collections-count").innerText = `1/1`;
+          document.getElementById("collections-count").innerText = 1/1;
           document.getElementById(
             "total-letters-count"
           ).innerText = `${unlockedLetters.length}/${totalLetters}`;
@@ -563,8 +815,8 @@
           event.innerHTML = `
         <p class="event-name">${collection.name}</p>
         <div class="event-line"></div>
-        <p class="letter-count">${unlockedLetters.length}/${totalLetters}</p>
-      `;
+        <p class="letter-count">${unlockedLetters.length}/${totalLetters}</p>`
+      ;
 
           eventList.appendChild(event);
 
@@ -577,46 +829,14 @@
             col.className = "col-md-6 mb-3";
 
             col.innerHTML = `
-          <div class="collection-letter ${!isUnlocked ? "locked" : ""}">
+          <div class="collection-letter ${!isUnlocked ? "locked" : ""}" style="position: relative;">
             <img src="${letter.url}" class="img-fluid" />
-            ${isRare ? '<div class="rare-badge">RARE</div>' : ""}
-          </div>
-        `;
+            ${isRare ? '<div class="badge rare rounded-pill-1">RARE</div>' : ""}
+          </div>`
 
             letterGrid.appendChild(col);
           });
         });
-      }
-
-      function filterLetters(type) {
-        document.querySelectorAll(".platform-option").forEach((el) => {
-          el.classList.remove("active");
-        });
-        const activeBtn =
-          type === "all"
-            ? document.querySelector(".platform-option:nth-child(1)")
-            : document.querySelector(".platform-option:nth-child(2)");
-        activeBtn.classList.add("active");
-
-        renderLetters(type);
-      }
-
-      // Initial render
-      renderLetters();
-
-      renderCollectionStats();
-      renderEventList();
-      renderLetters();
-
-      function filterLetters(option) {
-        document
-          .querySelectorAll(".platform-option")
-          .forEach((el) => el.classList.remove("active"));
-        const index = option === "all" ? 0 : 1;
-        document
-          .querySelectorAll(".platform-option")
-          [index].classList.add("active");
-        renderLetters(option);
       }
 
       window.onscroll = function () {
@@ -638,6 +858,40 @@
             behavior: "smooth",
           });
         });
+      
+
+      function filterLetters(type) {
+        document.querySelectorAll(".platform-option").forEach((el) => {
+          el.classList.remove("active");
+        });
+        const activeBtn =
+          type === "all"
+            ? document.querySelector(".platform-option:nth-child(1)")
+            : document.querySelector(".platform-option:nth-child(2)");
+        activeBtn.classList.add("active");
+
+        renderLetters(type);
+      }
+
+
+      // Initial render
+      renderLetters();
+
+      renderCollectionStats();
+      renderEventList();
+      renderLetters();
+
+      function filterLetters(option) {
+        document
+          .querySelectorAll(".platform-option")
+          .forEach((el) => el.classList.remove("active"));
+        const index = option === "all" ? 0 : 1;
+        document
+          .querySelectorAll(".platform-option")
+          [index].classList.add("active");
+        renderLetters(option);
+      }
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
